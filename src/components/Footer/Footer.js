@@ -49,7 +49,10 @@ export default function Footer(props) {
             >
               Creative Tim
             </a>
-            , made with love for a better web
+            ,{" "}
+            <a href="https://github.com/mvanacker/maurits-market-metrics">
+              Maurits Van Acker
+            </a>
           </span>
         </p>
       </div>
