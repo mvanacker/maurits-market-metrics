@@ -30,7 +30,7 @@ const hist = createBrowserHistory();
 ReactDOM.render(
   <Router history={hist}>
     <Switch>
-      <Route path="" component={Admin} />
+      <Route path="/" component={Admin} />
       <Redirect from="/" to="/dashboard" />
     </Switch>
   </Router>,
