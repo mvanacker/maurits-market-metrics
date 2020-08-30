@@ -20,11 +20,7 @@ export default function FixedPlugin(props) {
     props.handleFixedClick();
   };
   return (
-    <div
-      className={classnames("fixed-plugin", {
-        "rtl-fixed-plugin": props.rtlActive
-      })}
-    >
+    <div className="fixed-plugin">
       <div id="fixedPluginClasses" className={props.fixedClasses}>
         <div onClick={handleClick}>
           <i className="fa fa-cog fa-2x" />
@@ -182,9 +178,8 @@ export default function FixedPlugin(props) {
 FixedPlugin.propTypes = {
   bgImage: PropTypes.string,
   handleFixedClick: PropTypes.func,
-  rtlActive: PropTypes.bool,
   fixedClasses: PropTypes.string,
   bgColor: PropTypes.oneOf(["purple", "blue", "green", "orange", "red"]),
   handleColorClick: PropTypes.func,
-  handleImageClick: PropTypes.func
+  handleImageClick: PropTypes.func,
 };
