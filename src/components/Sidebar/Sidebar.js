@@ -13,6 +13,8 @@ import ListItemText from "@material-ui/core/ListItemText";
 import Icon from "@material-ui/core/Icon";
 // core components
 import AdminNavbarLinks from "components/Navbars/AdminNavbarLinks.js";
+// font awesome
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import styles from "assets/jss/material-dashboard-react/components/sidebarStyle.js";
 
@@ -22,7 +24,7 @@ export default function Sidebar(props) {
   const classes = useStyles();
   // verifies if routeName is the one active (in browser input)
   function activeRoute(routeName) {
-    return window.location.href.indexOf(routeName) > -1 ? true : false;
+    return window.location.href.indexOf(routeName) > -1;
   }
   const { color, image, logoText, routes } = props;
   var links = (
@@ -51,15 +53,22 @@ export default function Sidebar(props) {
             key={key}
           >
             <ListItem button className={classes.itemLink + listItemClasses}>
-              {typeof prop.icon === "string" ? (
-                <Icon
-                  className={classNames(classes.itemIcon, whiteFontClasses)}
-                >
-                  {prop.icon}
-                </Icon>
-              ) : (
-                <prop.icon
-                  className={classNames(classes.itemIcon, whiteFontClasses)}
+              {"icon" in prop &&
+                (typeof prop.icon === "string" ? (
+                  <Icon
+                    className={classNames(classes.itemIcon, whiteFontClasses)}
+                  >
+                    {prop.icon}
+                  </Icon>
+                ) : (
+                  <prop.icon
+                    className={classNames(classes.itemIcon, whiteFontClasses)}
+                  />
+                ))}
+              {"faIcon" in prop && (
+                <FontAwesomeIcon
+                  icon={prop.faIcon}
+                  className={classNames(classes.itemFaIcon, whiteFontClasses)}
                 />
               )}
               <ListItemText

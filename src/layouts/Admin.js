@@ -1,5 +1,5 @@
 import React from "react";
-import { Switch, Route, Redirect } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 // creates a beautiful scrollbar
 import PerfectScrollbar from "perfect-scrollbar";
 import "perfect-scrollbar/css/perfect-scrollbar.css";
@@ -11,7 +11,7 @@ import Footer from "components/Footer/Footer.js";
 import Sidebar from "components/Sidebar/Sidebar.js";
 import FixedPlugin from "components/FixedPlugin/FixedPlugin.js";
 
-import routes from "routes.js";
+import routes, { Home } from "routes.js";
 
 import styles from "assets/jss/material-dashboard-react/layouts/adminStyle.js";
 
@@ -22,10 +22,10 @@ let ps;
 
 const switchRoutes = (
   <Switch>
+    <Route exact path="/" component={Home} />
     {routes.map(({ path, component }, key) => (
       <Route path={path} component={component} key={key} />
     ))}
-    <Redirect from="/" to="/dashboard" />
   </Switch>
 );
 

@@ -16,7 +16,11 @@
 
 */
 // @material-ui/icons
-import Dashboard from "@material-ui/icons/Dashboard";
+import HomeIcon from "@material-ui/icons/Home";
+import { faHandshake } from "@fortawesome/free-solid-svg-icons";
+import ShowChart from "@material-ui/icons/ShowChart";
+import BarChart from "@material-ui/icons/BarChart";
+import DashboardIcon from "@material-ui/icons/Dashboard";
 import Person from "@material-ui/icons/Person";
 import LibraryBooks from "@material-ui/icons/LibraryBooks";
 import BubbleChart from "@material-ui/icons/BubbleChart";
@@ -24,7 +28,11 @@ import LocationOn from "@material-ui/icons/LocationOn";
 import Notifications from "@material-ui/icons/Notifications";
 import Unarchive from "@material-ui/icons/Unarchive";
 // core components/views for Admin layout
-import DashboardPage from "views/Dashboard/Dashboard.js";
+import Home from "views/Home/Home.js";
+import Trade from "views/Trade/Trade.js";
+import Stochastic from "views/Indicators/Stochastic.js";
+import Volatility from "views/Indicators/Volatility.js";
+import Dashboard from "views/Dashboard/Dashboard.js";
 import UserProfile from "views/UserProfile/UserProfile.js";
 import TableList from "views/TableList/TableList.js";
 import Typography from "views/Typography/Typography.js";
@@ -35,10 +43,34 @@ import UpgradeToPro from "views/UpgradeToPro/UpgradeToPro.js";
 
 const dashboardRoutes = [
   {
+    path: "/home",
+    name: "Home",
+    icon: HomeIcon,
+    component: Home,
+  },
+  {
+    path: "/trade",
+    name: "Trade",
+    faIcon: faHandshake,
+    component: Trade,
+  },
+  {
+    path: "/stochastic",
+    name: "Stochastic",
+    icon: ShowChart,
+    component: Stochastic,
+  },
+  {
+    path: "/volatility",
+    name: "Volatility",
+    icon: BarChart,
+    component: Volatility,
+  },
+  {
     path: "/dashboard",
     name: "Dashboard",
-    icon: Dashboard,
-    component: DashboardPage,
+    icon: DashboardIcon,
+    component: Dashboard,
   },
   {
     path: "/user",
@@ -84,4 +116,5 @@ const dashboardRoutes = [
   },
 ];
 
+export { Home };
 export default dashboardRoutes;
