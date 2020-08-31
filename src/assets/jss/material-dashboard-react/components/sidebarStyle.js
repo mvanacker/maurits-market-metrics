@@ -148,6 +148,17 @@ const sidebarStyle = (theme) => ({
     verticalAlign: "middle",
     color: "rgba(" + hexToRgb(whiteColor) + ", 0.8)",
   },
+  itemFaIcon: {
+    width: "24px",
+    height: "30px",
+    lineHeight: "30px",
+    float: "left",
+    marginLeft: "2px",
+    marginRight: "17px",
+    textAlign: "center",
+    verticalAlign: "middle",
+    color: "rgba(" + hexToRgb(whiteColor) + ", 0.8)",
+  },
   itemText: {
     ...defaultFont,
     margin: "0",
